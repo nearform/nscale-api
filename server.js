@@ -10,6 +10,7 @@ app.http().io();
 
 require('./lib/config/express')(app);
 require('./lib/routes')(app, config);
+
 app.listen(config.port, function () {
   console.log('Express server listening on port %d in %s mode', config.port, app.get('env'));
 });
