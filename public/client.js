@@ -19,28 +19,26 @@ $(function() {
 
 
   $('#systems').click(function() {
-    $.get('/api/list/systems', function(data) {
+    $.get('/api/1.0/systems', function(data) {
       $('#results').html(JSON.stringify(data, null, 2));
     });
   });
 
   $('#containers').click(function() {
-    $.get('/api/list/containers/1', function(data) {
+    $.get('/api/1.0/system/1/containers', function(data) {
       $('#results').html(JSON.stringify(data, null, 2));
     });
   });
 
   $('#build').click(function() {
     socket.emit('build', {systemId: 1, containerId: 1});
-/*
+  });
 
-
-    $.get('/api/build/container/1/3', function(data) {
-      $('#results').html(JSON.stringify(data, null, 2));
-    });
-    */
+  $('#deploy').click(function() {
+    socket.emit('deploy', {systemId: 1, containerId: 1});
   });
 });
+
 
 /*
 <script src="/socket.io/socket.io.js"></script>
