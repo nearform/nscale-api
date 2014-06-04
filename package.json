@@ -5,6 +5,7 @@
     "express.io": "~1.1.13",
     "lodash": "~2.4.1",
     "passport": "^0.2.0",
+    "passport-github": "^0.1.5",
     "passport-local": "^1.0.0",
     "underscore": "^1.6.0"
   },
