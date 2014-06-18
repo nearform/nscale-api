@@ -3,7 +3,7 @@
 $(function() {
 
   //var socket = io.connect();
-  var socket = io.connect('http://localhost');
+  var socket = io.connect('http://ec2-54-216-145-36.eu-west-1.compute.amazonaws.com');
 
   socket.on('stdout', function(data) {
     $('#output').append(data + '</br>');
