@@ -1,6 +1,6 @@
 {
-  "name": "nfdapi",
-  "version": "0.0.0",
+  "name": "nscale-api",
+  "version": "0.1.0",
   "dependencies": {
     "express.io": "~1.1.13",
     "lodash": "~2.4.1",
@@ -13,8 +13,5 @@
   "devDependencies": {},
   "engines": {
     "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "grunt test"
   }
 }
