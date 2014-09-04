@@ -1,6 +1,6 @@
 {
   "name": "nscale-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "dependencies": {
     "express.io": "~1.1.13",
     "lodash": "~2.4.1",
