@@ -1,6 +1,6 @@
 {
   "name": "nscale-api",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "NearForm's nscale API",
   "keywords": [
     "nearForm",
@@ -24,7 +24,8 @@
     "passport-github": "^0.1.5",
     "passport-local": "^1.0.0",
     "underscore": "^1.6.0",
-    "nscale-sdk": "~0.1.0"
+    "nscale-sdk": "~0.1.0",
+    "yargs": "^1.3.1"
   },
   "devDependencies": {},
   "engines": {

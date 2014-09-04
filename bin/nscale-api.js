@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 /*
  * THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED
  * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
@@ -14,8 +15,21 @@
 
 'use strict';
 
+var path = require('path');
+var opts = require('yargs')
+            .usage('Usage: $0 --config="config file"')
+            .alias('c', 'config')
+            .argv;
+
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-var config = require('./lib/config/config');
+opts.config = opts.config || '/usr/local/etc/nscale/config.json';
 
-require('./lib/main')(config);
+var config = require(path.resolve(opts.config));
+
+if (!config || !config.api) {
+	console.warn('WARN: Not starting nscale-api, config missing.')
+	return;
+}
+
+require('../lib/main')(config.api);
