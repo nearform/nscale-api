@@ -1,6 +1,22 @@
 {
   "name": "nscale-api",
-  "version": "0.1.1",
+  "version": "0.1.2",
+  "description": "NearForm's nscale API",
+  "keywords": [
+    "nearForm",
+    "nscale",
+    "api"
+  ],
+  "license": "Artistic License 2.0",
+  "author": "Nearform (http://nearform.com/)",
+  "contributors": [
+    "Peter Elger <elger.peter@gmail.com> (http://peterelger.com/)",
+    "Matteo Collina <matteo.collina@nearform.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nearform/nscale-api.git"
+  },
   "dependencies": {
     "express.io": "~1.1.13",
     "lodash": "~2.4.1",
