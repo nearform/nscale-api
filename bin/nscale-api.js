@@ -32,4 +32,6 @@ if (!config || !config.api) {
 	return;
 }
 
+config.api.env = process.env.NODE_ENV;
+
 require('../lib/main')(config.api);
