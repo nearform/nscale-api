@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#! /usr/bin/env node
 /*
  * THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED
  * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
@@ -16,12 +16,22 @@
 'use strict';
 
 var path = require('path');
-var spawn = require('child_process').spawn;
-spawn(
-  process.execPath,
-  [
-    '--abort_on_uncaught_exception',
-    path.join(__dirname, '_nscale-api.js')
-  ].concat(process.argv.slice(2)),
-  { stdio: 'inherit' }
-);
+var opts = require('yargs')
+            .usage('Usage: $0 --config="config file"')
+            .alias('c', 'config')
+            .argv;
+
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
+opts.config = opts.config || '/usr/local/etc/nscale/config.json';
+
+var config = require(path.resolve(opts.config));
+
+if (!config || !config.api) {
+	console.warn('WARN: Not starting nscale-api, config missing.')
+	return;
+}
+
+config.api.env = process.env.NODE_ENV;
+
+require('../lib/main')(config.api);
