@@ -1,6 +1,6 @@
 {
   "name": "nscale-api",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "NearForm's nscale API",
   "keywords": [
     "nearForm",
@@ -21,7 +21,7 @@
     "express.io": "~1.1.13",
     "ip": "^0.3.2",
     "lodash": "~2.4.1",
-    "nscale-sdk": "~0.2.0",
+    "nscale-sdk": "~0.5.0",
     "passport": "^0.2.0",
     "passport-github": "^0.1.5",
     "passport-local": "^1.0.0",
